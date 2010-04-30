@@ -1,0 +1,11 @@
+[user]
+	name = Pasha Puzikov
+	email = heydiplo@gmail.com
+
+[color]
+	ui = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
