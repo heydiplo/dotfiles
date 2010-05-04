@@ -3,3 +3,5 @@ BASEDIR=`dirname $0`
 ln -s $BASEDIR'/.gitconfig' ~/.gitconfig
 ln -s $BASEDIR'/.vimrc' ~/.vimrc
 ln -s $BASEDIR'/.vim' ~/.vim
+ln -s $BASEDIR'/.bashrc' ~/.bashrc
+rm -f $BASEDIR'/.vim/.vim'
