@@ -38,11 +38,10 @@ map <C-S-Tab> :execute ':tabp'<CR>
 map <C-S> :execute ':w'<CR>
 map <C-A> :execute 'NERDTreeToggle ' . getcwd()<CR>
 
-nmap <A-Up> :wincmd k<CR>
-nmap <A-Down> :wincmd j<CR>
-nmap <A-Left> :wincmd h<CR>
-nmap <A-Right> :wincmd l<CR>
-
+set autochdir
+map <Tab> <C-W>W:cd %:p:h<CR>:<CR>
+ 
+imap jj <Esc>
 
 " autocmd VimEnter * NERDTree
 " autocmd VimEnter * wincmd p 
