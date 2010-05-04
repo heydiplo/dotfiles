@@ -1,2 +1,2 @@
-mklink %HOME\_vimrc %HOME%\profile\_vimrc
-mklink /D %HOME%\vimfiles %HOME%\profile\.vim
+mklink %HOMEPATH%\_vimrc %HOMEPATH%\profile\_vimrc
+mklink /D %HOMEPATH%\vimfiles %HOMEPATH%\profile\.vim
