@@ -1,2 +1,6 @@
 source $HOME\profile\.vimrc
-source $HOME\profile\.vimrc.windows
+
+set guifont=Consolas:h10:cRUSSIAN
+set completeopt=menu
+set guioptions=-m
+set guioptions-=T
