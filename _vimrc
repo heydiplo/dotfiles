@@ -1,2 +1,2 @@
-source %HOMEPATH%\profile\.vimrc
-source %HOMEPATH%\profile\.vimrc.windows
+source $HOME\profile\.vimrc
+source $HOME\profile\.vimrc.windows
