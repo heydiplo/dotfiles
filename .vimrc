@@ -167,7 +167,13 @@ nnoremap <c-f> :FuzzyFinderTextMate<CR>
 let g:syntastic_enable_signs=1
 
 
-" let g:fuzzy_ignore = "gems/*"
+let g:fuzzy_ignore = "gems/*"
+let g:fuzzy_ignore = "*.git"
+let g:fuzzy_ignore = "*.log"
+let g:fuzzy_ignore = "*.jpg"
+let g:fuzzy_ignore = "*.gif"
+let g:fuzzy_ignore = "*.png"
+let g:fuzzy_ignore = "vendor/*"
 
 if has("autocmd")
 	autocmd! bufwritepost $MYVIMRC source $MYVIMRC " автоматически перечитывать файл конфигурации VIM после его сохранения
