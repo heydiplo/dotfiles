@@ -1,166 +1,89 @@
-" Несовместимо с vi
-set nocompatible
+set nocompatible            " Несовместимо с vi
 
-" Больше комманд в истории
-set history=128
+set history=128             " больше комманд в истории
+set undolevels=512          " и undo
 
-" и undo
-set undolevels=512
+set lazyredraw              " перерисовывать буфер менее плавно
+set autoread                " перечитывать измененные файлы автоматически
 
-" Перерисовывать буфер менее плавно
-set lazyredraw
+set t_Co=256                " Больше цветов
 
-" перечитывать измененные файлы автоматически
-set autoread
-
-" Больше цветов
-set t_Co=256
-
-" Backspace в режиме вставки
-set backspace=2
+set backspace=2             " backspace в режиме вставки
 
 if !&diff
-	" подсвечивать синтаксис
-	syntax enable
+    syntax enable           " подсвечивать синтаксис
 endif
 
 if has("autocmd")
-	" определять тип файла автоматически
-	filetype plugin on
+	filetype plugin on      " определять тип файла автоматически
+    filetype indent on
 endif
 
-" показывать строку с позицией курсора
-set ruler
+set ruler                   " показывать строку с позицией курсора
 
-" Показывать номера строк
-set number
+set number                  " показывать номера строк
 set numberwidth=5
 
-" Показывать буфер вводимой комманды
-set showcmd
+set showcmd                 " показывать буфер вводимой комманды
 
-" Показывать первую парную скобку после ввода второй
-set showmatch
+set matchpairs+=<:>         " показывать совпадающие скобки для html-тегов
 
-" Показывать совпадающие скобки для html-тегов
-set matchpairs+=<:>
+set cmdheight=2             " сделать строку комманд больше
+set cmdwinheight=16         " сделать окно комманд больше
 
-" Сделать строку комманд больше
-set cmdheight=2
+set showtabline=2           " всегда показывать строку вкладок
 
-" Сделать окно комманд больше
-set cmdwinheight=16
+set laststatus=2            " показывать строку статуса всегда
 
-" Всегда показывать строку вкладок
-set showtabline=2
-
-" Показывать строку статуса всегда
-set laststatus=2
-
-" формат строки статуса
+                            " формат строки статуса
 set statusline=%1*%m%*%2*%r%*%3*%h%w%*%{expand(\"%:p:~\")}%<\%=Col:%3*%03c%*\ Ln:%3*%04l%*/%3*%04L%*\File:%(%3*%{&filetype}%*/%)%3*%{&fileformat}%*%(/%3*%{&fileencoding}%*%)
 
-" Показывать заголовок в окне терминала
-set title
+set title                   " показывать заголовок в окне терминала
 
-" Формат заголовка
+                            " формат заголовка
 set titlestring=%t%(\ %m%)%(\ %r%)%(\ %h%)%(\ %w%)%(\ (%{expand(\"%:p:~:h\")})%)\ -\ VIM
 
-" Табуляция в 4 пробела
-set tabstop=4
+set autowrite               " сохранять файл при запуске консольных комманд
+
+set tabstop=4               " табуляция в 4 пробела
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-
-" Удалять лишние пробелы при отступе
-set shiftround
-
-" Диалоги вместо сообщений об ошибках
-set confirm
-
-" Использовать сокращенные диалоги
-set shortmess=fimnrxoOtTI
-
-" Поиск
-set incsearch
-set hlsearch
-
-" Игнорировать регистр, если запрос в нижнем регистре
-set ignorecase
-set smartcase
-
-" Автодополнения
-set infercase
-
-" Не переносить строки
-set nowrap
-
-" Кодировки
-set termencoding=utf-8
-
-set fileencodings=utf8,cp1251
-set encoding=utf8
-
-" фикс для русских клавиш
-set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё~
-
-" разрешить переход на новую/предыдущую строку
-set whichwrap=b,s,h,l,<,>,~,[,]
-
-" переключение режима отступов при вставке
-set pastetoggle=<F12>
-
-" Использовать wildmenu ...
-set wildmenu
-
-" ... с авто-дополнением ...
-set wildcharm=<TAB>
-
-" ... как в bash, затем перебором
-set wildmode=list:longest,full
-
 set autoindent
 set smartindent
 
-" горячие клавиши
+set shiftround              " удалять лишние пробелы при отступе
 
-" табы
-" новая вкладка
-nnoremap <C-T> :tabnew<CR>
-inoremap <C-T> <C-O>:tabnew<CR>
-vnoremap <C-T> <ESC>:tabnew<CR>
+set confirm                 " диалоги вместо сообщений об ошибках
+set shortmess=fimnrxoOtTI   " использовать сокращенные диалоги
 
-" предыдущая вкладка
-nnoremap <C-H-Tab> :call TabAction("jump", "left")<CR>
-inoremap <C-H-Tab> <C-O>:call TabAction("jump", "left")<CR>
-vnoremap <C-H-Tab> <ESC>:call TabAction("jump", "left")<CR>
+set incsearch               " поиск
+set hlsearch
 
-" следующая вкладка
-nnoremap <C-Tab> :call TabAction("jump", "right")<CR>
-inoremap <C-Tab> <C-O>:call TabAction("jump", "right")<CR>
-vnoremap <C-Tab> <ESC>:call TabAction("jump", "right")<CR>
+set ignorecase              " игнорировать регистр, если запрос в нижнем регистре
+set smartcase
 
-" Закрыть вкладку
-" nmap <A-F4> :execute ':tabclose'<CR>
-" map <A-F4> <C-O>:execute ':tabclose'<CR>
-" map <A-F4> <Esc>:execute ':tabclose'<CR>
+set infercase               " Автодополнения
 
-" Сохранить
-nnoremap <C-S> :execute ':w'<CR>
-inoremap <C-S> <C-O>:execute ':w'<CR>
-vnoremap <C-S> <Esc>:execute ':w'<CR>
+set termencoding=utf-8      " кодировки
+set fileencodings=utf8,cp1251
+set encoding=utf8
 
-nnoremap <F2> :execute 'NERDTreeToggle ' . getcwd()<CR>
-inoremap <F2> <C-O>:execute 'NERDTreeToggle ' . getcwd()<CR>
-vnoremap <F2> <Esc>:execute 'NERDTreeToggle ' . getcwd()<CR>
+                            " фикс для русских клавиш
+set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё~
 
-map <Tab> <C-W>W:cd %:p:h<CR>:<CR>
- 
-imap jj <Esc>
-imap оо <Esc>
+                            " разрешить переход на новую/предыдущую строку
+set whichwrap=b,s,h,l,<,>,~,[,]
+
+set pastetoggle=<F12>       " переключение режима отступов при вставке
+
+set wildmenu                " использовать wildmenu ...
+set wildcharm=<TAB>         " ... с авто-дополнением ...
+                            " ... как в bash, затем перебором
+set wildmode=list:longest,full
+
+set nowrap                  " не переносить строки
 set linebreak
-
-
 set nowrapscan
 
 set nobackup
@@ -169,25 +92,85 @@ set noswapfile
 set foldlevelstart=5
 set foldmethod=syntax
 
-" let g:fuzzy_ignore = "gems/*"
-
-
 set autochdir
 
-" --- авто-команды ---
+" горячие клавиши
+
+    " табы
+        " новая вкладка
+nmap tn :tabnew<CR>
+vmap tn <ESC>:tabnew<CR>
+
+        " следующая вкладка
+nmap tl :execute ':tabnext'<CR>
+vmap tl <Esc>:execute ':tabnext'<CR>
+
+        " предыдущая вкладка
+nmap th :execute ':tabprevious'<CR>
+vmap th <Esc>:execute ':tabprevious'<CR>
+
+        " закрыть вкладку
+nmap td :execute ':tabclose'<CR>
+vmap td <Esc>:execute ':tabclose'<CR>
+
+    " сохранить
+nnoremap <F2> :execute ':w'<CR>
+inoremap <F2> <C-O>:execute ':w'<CR>
+vnoremap <F2> <Esc>:execute ':w'<CR>
+
+    " убрать/показать дерево
+nnoremap <F3> :execute 'NERDTreeToggle ' . getcwd()<CR>
+inoremap <F3> <C-O>:execute 'NERDTreeToggle ' . getcwd()<CR>
+vnoremap <F3> <Esc>:execute 'NERDTreeToggle ' . getcwd()<CR>
+
+    " переключение между окнами
+map <Tab> <C-W>W:cd %:p:h<CR>:<CR>
+
+    " закрытие html-тегов
+imap <C-_> </<C-X><C-O> 
+
+    " ускоренное передвижение по файлу
+nmap <C-H> 5h
+nmap <C-J> 5j
+nmap <C-K> 5k
+nmap <C-L> 5l
+
+    " Клавиши быстрого редактирования строки в режиме вставки
+    " и в режиме редактирования командной строки.
+imap <C-H> <Left>
+imap <C-J> <Down>
+imap <C-K> <Up>
+imap <C-L> <Right>
+
+cmap <C-H> <Left>
+cmap <C-J> <Down>
+cmap <C-K> <Up>
+cmap <C-L> <Right>
+
+    " Более привычные Page Up/Down, когда курсор остаётся в той же строке,
+    " а не переносится вверх/вниз экрана, как при стандартном PgUp/PgDown.
+    " Поскольку по умолчанию прокрутка по C-U/D происходит на полэкрана,
+    " привязка делается к двойному нажатию этих комбинаций.
+nmap <PageUp> <C-U><C-U>
+imap <PageUp> <C-O><C-U><C-O><C-U>
+nmap <PageDown> <C-D><C-D>
+imap <PageDown> <C-O><C-D><C-O><C-D>
+
+    " выход из режима вставка по jj
+imap jj <Esc>l
+imap оо <Esc>l
+
+"map to fuzzy finder text mate stylez
+nnoremap <c-f> :FuzzyFinderTextMate<CR>
+
+"mark syntax errors with :signs
+let g:syntastic_enable_signs=1
+
+
+" let g:fuzzy_ignore = "gems/*"
 
 if has("autocmd")
-
-	" переопределять переменные для некоторых типов файлов
-	autocmd! filetype help setlocal nonumber
-
-	" переопределять переменные для некоторых файлов по расширению
-	autocmd! bufnewfile,bufread *.erb setlocal filetype=html
-
-	" автоматически перечитывать файл конфигурации VIM после его сохранения
-	autocmd! bufwritepost $MYVIMRC source $MYVIMRC
-
+	autocmd! bufwritepost $MYVIMRC source $MYVIMRC " автоматически перечитывать файл конфигурации VIM после его сохранения
 endif
-
 
 colorscheme desert256
