@@ -157,20 +157,15 @@ imap <PageDown> <C-O><C-D><C-O><C-D>
 imap jj <Esc>
 imap оо <Esc>
 
+map <C-f> :CommandT<CR>
+map <S-F> :CommandTFlush<CR>
 "map to fuzzy finder text mate stylez
 "nnoremap <c-f> :FuzzyFinderTextMate<CR>
 
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
-
-let g:fuzzy_ignore = "gems/*"
-let g:fuzzy_ignore = "*.git"
-let g:fuzzy_ignore = "*.log"
-let g:fuzzy_ignore = "*.jpg"
-let g:fuzzy_ignore = "*.gif"
-let g:fuzzy_ignore = "*.png"
-let g:fuzzy_ignore = "vendor/*"
+set wildignore+=*.git,*.log,*.jpg,*.git,*.png,vendor/*
 
 if has("autocmd")
 	autocmd! bufwritepost $MYVIMRC source $MYVIMRC " автоматически перечитывать файл конфигурации VIM после его сохранения
