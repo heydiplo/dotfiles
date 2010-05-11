@@ -1,7 +1,4 @@
-set nocompatible            " Несовместимо с vi
-
-set history=128             " больше комманд в истории
-set undolevels=512          " и undo
+set nocompatible            " Несовместимо с vi set history=128             " больше комманд в истории set undolevels=512          " и undo
 
 set lazyredraw              " перерисовывать буфер менее плавно
 set autoread                " перечитывать измененные файлы автоматически
@@ -92,7 +89,7 @@ set noswapfile
 set foldlevelstart=5
 set foldmethod=syntax
 
-set autochdir
+" set autochdir
 
 " горячие клавиши
 
@@ -130,10 +127,10 @@ map <Tab> <C-W>W:cd %:p:h<CR>:<CR>
 imap <C-_> </<C-X><C-O> 
 
     " ускоренное передвижение по файлу
-nmap <C-H> 5h
+nmap <C-H> B
 nmap <C-J> 5j
 nmap <C-K> 5k
-nmap <C-L> 5l
+nmap <C-L> W
 
     " Клавиши быстрого редактирования строки в режиме вставки
     " и в режиме редактирования командной строки.
@@ -157,11 +154,11 @@ nmap <PageDown> <C-D><C-D>
 imap <PageDown> <C-O><C-D><C-O><C-D>
 
     " выход из режима вставка по jj
-imap jj <Esc>l
-imap оо <Esc>l
+imap jj <Esc>
+imap оо <Esc>
 
 "map to fuzzy finder text mate stylez
-nnoremap <c-f> :FuzzyFinderTextMate<CR>
+"nnoremap <c-f> :FuzzyFinderTextMate<CR>
 
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
