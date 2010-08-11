@@ -1,9 +1,13 @@
-set nocompatible            " Несовместимо с vi set history=128             " больше комманд в истории set undolevels=512          " и undo
+set t_Co=256                " Больше цветов
+
+colorscheme desert256
+
+set nocompatible            " Несовместимо с vi
+set history=128             " больше комманд в истории
+set undolevels=512          " и undo
 
 set lazyredraw              " перерисовывать буфер менее плавно
 set autoread                " перечитывать измененные файлы автоматически
-
-set t_Co=256                " Больше цветов
 
 set backspace=2             " backspace в режиме вставки
 
@@ -86,8 +90,10 @@ set nowrapscan
 set nobackup
 set noswapfile
 
-set foldlevelstart=5
-set foldmethod=syntax
+set foldlevelstart=0
+set foldmethod=indent
+hi Folded	cterm=none	ctermfg=244	ctermbg=232	gui=none	guifg=#eeeeee	guibg=#5f5f87
+
 
 " set autochdir
 
@@ -132,6 +138,9 @@ nmap <C-J> 5j
 nmap <C-K> 5k
 nmap <C-L> W
 
+vmap <C-H> B
+vmap <C-L> W
+
     " Клавиши быстрого редактирования строки в режиме вставки
     " и в режиме редактирования командной строки.
 imap <C-H> <Left>
@@ -144,6 +153,9 @@ cmap <C-J> <Down>
 cmap <C-K> <Up>
 cmap <C-L> <Right>
 
+    " Скопировать в нижнюю строку кусок от начала текущей строки до курсора
+nmap <C-L> v0"ly<Esc>o<Esc>"lpA
+
     " Более привычные Page Up/Down, когда курсор остаётся в той же строке,
     " а не переносится вверх/вниз экрана, как при стандартном PgUp/PgDown.
     " Поскольку по умолчанию прокрутка по C-U/D происходит на полэкрана,
@@ -153,22 +165,27 @@ imap <PageUp> <C-O><C-U><C-O><C-U>
 nmap <PageDown> <C-D><C-D>
 imap <PageDown> <C-O><C-D><C-O><C-D>
 
+nmap <c-b> zA
+imap <c-b> <Esc>zAi
+
     " выход из режима вставка по jj
 imap jj <Esc>
 imap оо <Esc>
 
+map <C-n> :noh<cr>
+map <C-e> :b#<cr>
+
 map <C-f> :CommandT<CR>
-map <S-F> :CommandTFlush<CR>
+map <S-d>f :CommandTFlush<CR>
 "map to fuzzy finder text mate stylez
 "nnoremap <c-f> :FuzzyFinderTextMate<CR>
 
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
-set wildignore+=*.git,*.log,*.jpg,*.git,*.png,vendor/*
+set wildignore+=*.git,*.log,*.jpg,*.git,*.png,**/vendor/**,**/test/**,data
 
 if has("autocmd")
 	autocmd! bufwritepost $MYVIMRC source $MYVIMRC " автоматически перечитывать файл конфигурации VIM после его сохранения
 endif
 
-colorscheme desert256

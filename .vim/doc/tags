@@ -687,10 +687,12 @@ taglist-session	taglist.txt	/*taglist-session*
 taglist-todo	taglist.txt	/*taglist-todo*
 taglist-using	taglist.txt	/*taglist-using*
 taglist.txt	taglist.txt	/*taglist.txt*
+vS	surround.txt	/*vS*
 v_[%	matchit.txt	/*v_[%*
 v_]%	matchit.txt	/*v_]%*
 v_a%	matchit.txt	/*v_a%*
 v_g%	matchit.txt	/*v_g%*
+vgS	surround.txt	/*vgS*
 vs	surround.txt	/*vs*
 xterm16	xterm16.txt	/*xterm16*
 xterm16-16cterm	xterm16.txt	/*xterm16-16cterm*
