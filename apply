@@ -4,6 +4,9 @@ BASEDIR=`dirname $0`
 rm ~/.bashrc
 ln -s $BASEDIR'/.bashrc' ~/.bashrc
 
+rm ~/.bash_profile
+ln -s $BASEDIR'/.bash_profile' ~/.bash_profile
+
 ln -s $BASEDIR'/.vimrc' ~/.vimrc
 ln -s $BASEDIR'/.vim' ~/.vim
 rm -f $BASEDIR'/.vim/.vim'

@@ -1,3 +1,4 @@
+set shell=bash\ --login
 set t_Co=256                " Больше цветов
 
 colorscheme desert256
