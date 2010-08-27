@@ -1,13 +1,18 @@
 [user]
 	name = Pasha Puzikov
 	email = heydiplo@gmail.com
-
 [color]
 	ui = auto
 [alias]
+    current-branch = "!git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \\(.*\\)/\\1/'"
+	s = status
 	st = status
-	ci = commit
+	c = commit -m
+    ca = commit -am
+    l = "!git pull origin $(git current-branch)"
+    h = "!git push origin $(git current-branch)"
+    lh = "!git l && git h"
+    d = diff
 	co = checkout
-	br = branch
 [push]
 	default = matching

@@ -43,11 +43,21 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+format_git_branch() {
+    branch=`git current-branch`
+    if [ "$branch" -a "$branch" != 'master' ]; then
+        echo " →$branch"
+    else
+        echo ''
+    fi
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+    PS1="\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[0;33m\]\$(format_git_branch)\[\e[m\] \[\e[1;32m\]\$\[\e[m\] "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir

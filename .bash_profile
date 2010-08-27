@@ -8,7 +8,9 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-alias sc='script/console $@'
-alias m='mongrel_rails $@'
+alias sc='script/console'
+alias m='mongrel_rails'
+alias cp='cp -vi'
+alias mv='mv -vi'
 
 shopt -s expand_aliases
