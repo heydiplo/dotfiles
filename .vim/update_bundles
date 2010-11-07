@@ -10,7 +10,6 @@ git_bundles = [
     "git://github.com/ghewgill/vim-scmdiff.git",
     "git://github.com/vim-scripts/camelcasemotion.git",
     "git://github.com/vim-scripts/Obvious-Mode.git",
-    "git://github.com/vim-scripts/css_color.vim.git",
     "git://github.com/vim-scripts/taglist.vim.git",
     "git://github.com/ervandew/supertab.git",
     "git://github.com/vim-scripts/Conque-Shell.git",
