@@ -14,3 +14,12 @@ alias cp='cp -vi'
 alias mv='mv -vi'
 
 shopt -s expand_aliases
+
+# include .bashrc if it exists
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+    source "/usr/local/bin/virtualenvwrapper.sh"
+fi
+
+if [ -f "~/srces/git-completion.bash" ]; then
+    source "~/srces/git-completion.bas"
+fi
