@@ -1,3 +1,6 @@
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
 set shell=bash\ --login
 set t_Co=256                " Больше цветов
 
@@ -119,8 +122,12 @@ vmap td <Esc>:execute ':tabclose'<CR>
 
     " сохранить
 nnoremap <F2> :execute ':w'<CR>
-inoremap <F2> <C-O>:execute ':w'<CR>
-vnoremap <F2> <Esc>:execute ':w'<CR>
+vnoremap <F2> <C-O>:execute ':w'<CR>
+inoremap <F2> <Esc>:execute ':w'<CR>
+
+nnoremap <F1> :TlistToggle<CR>
+vnoremap <F1> <C-O>:TlistToggle<CR>
+inoremap <F1> <Esc>:TlistToggle<CR>
 
     " убрать/показать дерево
 nnoremap <F3> :execute 'NERDTreeToggle ' . getcwd()<CR>
@@ -138,6 +145,10 @@ nmap <C-H> B
 nmap <C-J> 5j
 nmap <C-K> 5k
 nmap <C-L> W
+vmap <C-H> B
+vmap <C-J> 5j
+vmap <C-K> 5k
+vmap <C-L> W
 
 vmap <C-H> B
 vmap <C-L> W

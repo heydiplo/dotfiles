@@ -8,9 +8,23 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+if [ -d "/opt/ruby-enterprise-1.8.7-2010.02/bin" ] ; then
+    PATH="/opt/ruby-enterprise-1.8.7-2010.02/bin:$PATH"
+fi
+
+passenger_restart(){
+    if [ -d "./tmp" ] ; then
+        touch ./tmp/restart
+        echo 'Restarting passenger...'
+    else
+        echo 'Ain`t no Rails root, right?'
+    fi
+}
+
 alias sc='script/console'
 alias m='mongrel_rails'
 alias cp='cp -vi'
 alias mv='mv -vi'
+alias rr='passenger_restart'
 
 shopt -s expand_aliases
