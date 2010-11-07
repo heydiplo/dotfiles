@@ -1,3 +1,6 @@
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
 set shell=bash\ --login
 set t_Co=256                " Больше цветов
 
@@ -91,7 +94,7 @@ set nowrapscan
 set nobackup
 set noswapfile
 
-set foldlevelstart=0
+set foldlevelstart=7
 set foldmethod=indent
 hi Folded	cterm=none	ctermfg=244	ctermbg=232	gui=none	guifg=#eeeeee	guibg=#5f5f87
 
@@ -119,8 +122,10 @@ vmap td <Esc>:execute ':tabclose'<CR>
 
     " сохранить
 nnoremap <F2> :execute ':w'<CR>
-inoremap <F2> <C-O>:execute ':w'<CR>
-vnoremap <F2> <Esc>:execute ':w'<CR>
+vnoremap <F2> <C-O>:execute ':w'<CR>
+inoremap <F2> <Esc>:execute ':w'<CR>
+
+nnoremap <F4> :TlistToggle<CR>
 
     " убрать/показать дерево
 nnoremap <F3> :execute 'NERDTreeToggle ' . getcwd()<CR>
@@ -138,6 +143,10 @@ nmap <C-H> B
 nmap <C-J> 5j
 nmap <C-K> 5k
 nmap <C-L> W
+vmap <C-H> B
+vmap <C-J> 5j
+vmap <C-K> 5k
+vmap <C-L> W
 
 vmap <C-H> B
 vmap <C-L> W
@@ -189,4 +198,30 @@ set wildignore+=*.git,*.log,*.jpg,*.git,*.png,**/vendor/**,**/test/**,data
 if has("autocmd")
 	autocmd! bufwritepost $MYVIMRC source $MYVIMRC " автоматически перечитывать файл конфигурации VIM после его сохранения
 endif
+
+" --------------------
+" TagList
+" --------------------
+" TagListTagName - Used for tag names
+highlight MyTagListTagName gui=bold guifg=Black guibg=Orange
+" TagListTagScope - Used for tag scope
+highlight MyTagListTagScope gui=NONE guifg=Blue
+" TagListTitle - Used for tag titles
+highlight MyTagListTitle gui=bold guifg=DarkRed guibg=LightGray
+" TagListComment - Used for comments
+highlight MyTagListComment guifg=DarkGreen
+" TagListFileName - Used for filenames
+highlight MyTagListFileName gui=bold guifg=Black guibg=LightBlue
+"let Tlist_Ctags_Cmd = $VIM.'/vimfiles/ctags.exe' " location of ctags tool
+let Tlist_Show_One_File = 1 " Displaying tags for only one file~
+let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill yourself
+let Tlist_Use_Right_Window = 1 " split to the right side of the screen
+let Tlist_Sort_Type = "order" " sort by order or name
+let Tlist_Display_Prototype = 1 " do not show prototypes and not tags in the taglist window.
+let Tlist_Compart_Format = 1 " Remove extra information and blank lines from the taglist window.
+let Tlist_GainFocus_On_ToggleOpen = 1 " Jump to taglist window on open.
+let Tlist_Display_Tag_Scope = 1 " Show tag scope next to the tag name.
+let Tlist_Close_On_Select = 1 " Close the taglist window when a file or tag is selected.
+let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the taglist window.
+let Tlist_WinWidth = 40
 
