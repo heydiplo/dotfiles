@@ -30,10 +30,10 @@ alias rr='passenger_restart'
 shopt -s expand_aliases
 
 # include .bashrc if it exists
-if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
-    source "/usr/local/bin/virtualenvwrapper.sh"
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if [ -f "~/srces/git-completion.bash" ]; then
-    source "~/srces/git-completion.bas"
+if [ -f ~/srces/git-completion.bash ]; then
+    source ~/srces/git-completion.bash
 fi

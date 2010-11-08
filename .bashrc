@@ -95,6 +95,6 @@ eval `ssh-agent`
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-if [[ `uname` == 'Darwin' ]]; then
+if [[ "`uname`" == 'Darwin' ]]; then
     export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 fi
