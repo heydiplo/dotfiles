@@ -37,3 +37,7 @@ fi
 if [ -f ~/srces/git-completion.bash ]; then
     source ~/srces/git-completion.bash
 fi
+
+if [[ "`uname`" == 'Darwin' ]]; then
+    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+fi

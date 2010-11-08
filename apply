@@ -22,3 +22,6 @@ ln -s $BASEDIR'/.irbrc' ~/.irbrc
 
 rm ~/.gemrc
 ln -s $BASEDIR'/.gemrc' ~/.gemrc
+
+rm ~/.ctags
+ln -s $BASEDIR'/.ctags' ~/.ctags
