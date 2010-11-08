@@ -15,12 +15,13 @@ git_bundles = [
     "git://github.com/vim-scripts/Conque-Shell.git",
     "git://github.com/tpope/vim-repeat.git",
     "git://github.com/vim-ruby/vim-ruby.git",
-    "git://github.com/vim-scripts/tComment.git"
+    "git://github.com/vim-scripts/tComment.git",
+    "git://github.com/vim-scripts/local_vimrc.vim.git",
+    "git://github.com/vim-scripts/AutoClose.git"
 ]
 
 vim_org_scripts = [
     ["javascript", "10728", "syntax"],
-    ["autoclose", "10873", "plugin"]
 #  ["IndexedSearch", "7062",  "plugin"],
 #  ["gist",          "12732", "plugin"],
 #  ["jquery",        "12107", "syntax"],
@@ -29,12 +30,15 @@ vim_org_scripts = [
 require 'fileutils'
 require 'open-uri'
 
-bundles_dir = File.join(File.dirname(__FILE__), "bundle")
+ROOT_DIR = File.dirname(__FILE__)
 
-puts "Trashing everything (lookout!)"
-FileUtils.cd(bundles_dir)
-Dir["*"].each {|d| FileUtils.rm_rf d }
-FileUtils.cd('..')
+bundles_dir = File.join(ROOT_DIR, "bundle")
+old_bundles_dir = File.join(ROOT_DIR, "bundle.old.#{ Time.new.to_i }")
+
+FileUtils.mv bundles_dir, old_bundles_dir
+
+FileUtils.mkdir bundles_dir
+FileUtils.cd ROOT_DIR
 
 git_bundles.each do |url|
   if url.include? ';'
