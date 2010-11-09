@@ -15,5 +15,7 @@
     lh = "!git l && git h"
     d = diff
 	co = checkout
+    time = !bash -c 'git rev-list -n1 --before=\"$0\" $(git current-branch)'
+    tdiff = !bash -c 'git diff $(git time \"$0\") $(@:1:100)'
 [push]
 	default = matching

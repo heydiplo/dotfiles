@@ -224,3 +224,7 @@ let Tlist_Close_On_Select = 1 " Close the taglist window when a file or tag is s
 let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the taglist window.
 let Tlist_WinWidth = 80
 
+" ------------
+" Rag Tag
+" ------------
+" let g:ragtag_global_maps = 1

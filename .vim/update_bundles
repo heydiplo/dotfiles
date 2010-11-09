@@ -17,7 +17,8 @@ git_bundles = [
     "git://github.com/vim-ruby/vim-ruby.git",
     "git://github.com/vim-scripts/tComment.git",
     "git://github.com/vim-scripts/local_vimrc.vim.git",
-    "git://github.com/vim-scripts/AutoClose.git"
+    "git://github.com/vim-scripts/AutoClose.git",
+    "git://github.com/tpope/vim-ragtag.git"
 ]
 
 vim_org_scripts = [
