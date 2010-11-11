@@ -228,3 +228,10 @@ let Tlist_WinWidth = 80
 " Rag Tag
 " ------------
 " let g:ragtag_global_maps = 1
+
+
+" -------------
+" NERDtree
+" -------------
+
+let NERDTreeChDirMode = 0
