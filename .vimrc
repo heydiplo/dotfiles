@@ -178,6 +178,11 @@ imap <PageDown> <C-O><C-D><C-O><C-D>
 nmap <c-b> zA
 imap <c-b> <Esc>zAi
 
+" does nothing
+nmap <F1> jk
+imap <F1> <Left><Right>
+vmap <F1> jk
+
     " выход из режима вставка по jj
 imap jj <Esc>
 imap оо <Esc>
