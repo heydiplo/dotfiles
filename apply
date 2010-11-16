@@ -25,3 +25,5 @@ ln -s $BASEDIR'/.gemrc' ~/.gemrc
 
 rm ~/.ctags
 ln -s $BASEDIR'/.ctags' ~/.ctags
+
+mkdir $BASEDIR'/.vim/undodir'

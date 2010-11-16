@@ -6,3 +6,4 @@
 .vim/ruby/command-t/matcher.o
 .vim/ruby/command-t/mkmf.log
 .vim/bundle*
+.vim/undodir
