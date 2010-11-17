@@ -294,8 +294,6 @@ highlight MyTagListTitle gui=bold guifg=DarkRed guibg=LightGray
 highlight MyTagListComment guifg=DarkGreen
 " TagListFileName - Used for filenames
 highlight MyTagListFileName gui=bold guifg=Black guibg=LightBlue
-"" location of ctags tool
-let Tlist_Ctags_Cmd = $VIM.'/vimfiles/ctags.exe' 
 " Displaying tags for only one file~
 let Tlist_Show_One_File = 1 
 " if you are the last, kill yourself
