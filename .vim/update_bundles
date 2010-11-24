@@ -18,7 +18,9 @@ git_bundles = [
     "git://github.com/vim-scripts/tComment.git",
     "git://github.com/vim-scripts/local_vimrc.vim.git",
     "git://github.com/vim-scripts/AutoClose.git",
-    "git://github.com/tpope/vim-ragtag.git"
+    "git://github.com/tpope/vim-ragtag.git",
+    "git://github.com/vim-scripts/minibufexpl.vim.git",
+    "git://github.com/vim-scripts/bufexplorer.zip.git"
 ]
 
 vim_org_scripts = [
