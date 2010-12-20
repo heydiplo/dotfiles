@@ -157,9 +157,9 @@ set nowrapscan
 set nobackup
 set noswapfile
 
-set foldlevelstart=7
+set foldlevelstart=10
 set foldmethod=indent
-hi Folded	cterm=none	ctermfg=244	ctermbg=232	gui=none	guifg=#eeeeee	guibg=#5f5f87
+hi Folded	cterm=none	ctermfg=244	ctermbg=232	gui=none	guifg=#eeeeee	guibg=#444444
 
 
 " set autochdir

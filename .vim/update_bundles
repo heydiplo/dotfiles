@@ -20,6 +20,7 @@ git_bundles = [
     "git://github.com/vim-scripts/AutoClose.git",
     "git://github.com/tpope/vim-ragtag.git",
     "git://github.com/mattn/zencoding-vim.git"
+    "git://github.com/vim-scripts/bufexplorer.zip.git"
 ]
 
 vim_org_scripts = [
