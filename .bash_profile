@@ -10,7 +10,7 @@ fi
 
 for ruby_dir in `ls -1d /opt/ruby* 2> /dev/null | tail -n 1`
 do
-    PATH="$ruby_dir:$PATH"
+    PATH="$ruby_dir/bin:$PATH"
 done
 
 passenger_restart(){
