@@ -11,13 +11,16 @@ set nocompatible
 
 " History
 """"""""""""""""""""""""""""""""""
+if has("persistent_undo")
 set history=700
 set undodir=~/.vim/undodir
 set undofile
-" maximum number of changes that can be undone
-set undolevels=1000 
 " maximum number lines to save for undo on a buffer reload
 set undoreload=10000 
+endif
+
+" maximum number of changes that can be undone
+set undolevels=1000 
 
 " перечитывать измененные файлы автоматически
 set autoread
@@ -273,8 +276,9 @@ map <C-e> :b#<cr>
 
 map <C-f> :CommandT<CR>
 map <S-d>f :CommandTFlush<CR>
-"map to fuzzy finder text mate stylez
-"nnoremap <c-f> :FuzzyFinderTextMate<CR>
+
+map ,ce tn:ConqueTerm bash --login<CR>
+map ,cl tn:ConqueTerm tail -f log/development.log -n 500<CR>
 
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
