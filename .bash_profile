@@ -8,9 +8,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "/opt/ruby-enterprise-1.8.7-2010.02/bin" ] ; then
-    PATH="/opt/ruby-enterprise-1.8.7-2010.02/bin:$PATH"
-fi
+for ruby_dir in `ls -1d /opt/ruby* 2> /dev/null | tail -n 1`
+do
+    PATH="$ruby_dir:$PATH"
+done
 
 passenger_restart(){
     if [ -d "./tmp" ] ; then
