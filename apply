@@ -26,4 +26,7 @@ ln -s $BASEDIR'/.gemrc' ~/.gemrc
 rm ~/.ctags
 ln -s $BASEDIR'/.ctags' ~/.ctags
 
+rm ~/.tmux.conf
+ln -s $BASEDIR'/.tmux.conf' ~/.tmux.conf
+
 mkdir $BASEDIR'/.vim/undodir'

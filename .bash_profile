@@ -22,11 +22,24 @@ passenger_restart(){
     fi
 }
 
-alias sc='script/console'
+rails_console(){
+    rails_3=`rails -v|grep " 3."`
+    if [ -f "./script/console" ] 
+    then
+        ./script/console
+    elif [ -n "$rails_3" ] 
+    then
+        rails c
+    fi
+}
+
+alias sc='rails_console'
 alias m='mongrel_rails'
 alias cp='cp -vi'
 alias mv='mv -vi'
 alias rr='passenger_restart'
+alias tmux='TERM=xterm-256color tmux'
+alias ton='tmux attach -t'
 
 shopt -s expand_aliases
 
@@ -42,3 +55,5 @@ fi
 if [[ "`uname`" == 'Darwin' ]]; then
     export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 fi
+
+. ~/dotfiles/auto-ssh-agent.sh
