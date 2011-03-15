@@ -95,4 +95,4 @@ fi
 
 set -o vi
 
-
+. ~/dotfiles/auto-ssh-agent.sh

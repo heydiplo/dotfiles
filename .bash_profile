@@ -36,6 +36,7 @@ rails_console(){
 alias sc='rails_console'
 alias m='mongrel_rails'
 alias cp='cp -vi'
+alias ps='ps -Af --forest'
 alias mv='mv -vi'
 alias rr='passenger_restart'
 alias tmux='TERM=xterm-256color tmux'
@@ -55,5 +56,3 @@ fi
 if [[ "`uname`" == 'Darwin' ]]; then
     export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 fi
-
-. ~/dotfiles/auto-ssh-agent.sh
