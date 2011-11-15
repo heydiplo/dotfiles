@@ -13,6 +13,12 @@ do
     PATH="$ruby_dir/bin:$PATH"
 done
 
+if [ -d "$HOME/.rbenv" ] ; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+fi
+
+hash rbenv && eval "$(rbenv init -)"
+
 passenger_restart(){
     if [ -d "./tmp" ] ; then
         touch ./tmp/restart
@@ -40,7 +46,8 @@ alias ps='ps -Af --forest'
 alias mv='mv -vi'
 alias rr='passenger_restart'
 alias tmux='TERM=xterm-256color tmux'
-alias ton='tmux attach -t'
+alias workon='~/workon.sh'
+alias ton='~/workon.sh'
 
 shopt -s expand_aliases
 
@@ -56,3 +63,5 @@ fi
 if [[ "`uname`" == 'Darwin' ]]; then
     export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 fi
+
+

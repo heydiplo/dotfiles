@@ -34,4 +34,8 @@ install:
 	rm ~/.zshrc; true
 	ln -s `pwd`/.zshrc ~/.zshrc
 
+	rm ~/workon.sh; true
+	ln -s `pwd`/workon.sh ~/workon.sh
+	chmod +x ~/workon.sh
+
 	mkdir -p `pwd`/.vim/undodir
