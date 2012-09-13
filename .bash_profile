@@ -42,12 +42,16 @@ rails_console(){
 alias sc='rails_console'
 alias m='mongrel_rails'
 alias cp='cp -vi'
-alias ps='ps -Af --forest'
+# alias ps='ps Af --forest'
 alias mv='mv -vi'
 alias rr='passenger_restart'
 alias tmux='TERM=xterm-256color tmux'
 alias workon='~/workon.sh'
 alias ton='~/workon.sh'
+alias b="bundle exec"
+if [ `which hub` ]; then
+    alias git=hub
+fi
 
 shopt -s expand_aliases
 
@@ -56,12 +60,14 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if [ -f ~/srces/git-completion.bash ]; then
-    source ~/srces/git-completion.bash
+if [ -f ~/bin/git-completion.bash ]; then
+    source ~/bin/git-completion.bash
 fi
 
 if [[ "`uname`" == 'Darwin' ]]; then
-    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+    export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
 fi
 
-
+if [ -f ~/.ec2_init ]; then
+    source ~/.ec2_init
+fi

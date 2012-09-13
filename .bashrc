@@ -53,7 +53,7 @@ format_git_branch() {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1="\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[0;33m\]\$(format_git_branch)\[\e[m\] \[\e[1;32m\]→\[\e[m\] "
+    PS1="\[\e[0;37m\]\u\[\e[m\] \[\e[0;37m\]\w\[\e[m\]\[\e[0;33m\]\$(format_git_branch)\[\e[m\] \[\e[1;32m\]→\[\e[m\] "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -91,8 +91,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+complete -W "$(echo `cat ~/.ssh/config | grep '^Host ' | colrm 1 5`)" ssh
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 set -o vi
 
+
+
 . ~/dotfiles/auto-ssh-agent.sh
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LOCAL_BUNDLER_ENV=development

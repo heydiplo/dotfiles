@@ -19,3 +19,7 @@
     tdiff = !bash -c 'git diff $(git time \"$0\") $(@:1:100)'
 [push]
 	default = matching
+[github]
+	user = heydiplo
+[core]
+	excludesfile = /Users/heydiplo/.gitignore

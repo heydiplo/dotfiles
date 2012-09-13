@@ -22,7 +22,7 @@ if [ $? -ne 0 ]; then
 
     tmux send-keys -t $APP:0.0 'vim' C-m
     tmux send-keys -t $APP:1.0 'tail -f log/development.log' C-m
-    tmux send-keys -t $APP:1.1 'bundle exec rails c' C-m
+    tmux send-keys -t $APP:1.1 './script/rails c' C-m
 
     tmux select-window -t $APP:0
     tmux -2 attach-session -d -t $APP

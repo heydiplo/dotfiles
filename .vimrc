@@ -102,12 +102,16 @@ endif
 set autowrite               
 
 " табуляция в 4 пробела
-set tabstop=4               
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 set smartindent
+
+" highlight lines more than 80 chars long
+" highlight OverLength ctermbg=52 guibg=#8e000b
+" match OverLength /\%81v.\+/
 
 " удалять лишние пробелы при отступе
 set shiftround              
@@ -279,7 +283,7 @@ map ,cl tn:ConqueTerm tail -f log/development.log -n 500<CR>
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
-set wildignore+=*.git,*.log,*.jpg,*.git,*.png,**/vendor/**,**/test/**,data
+set wildignore+=*.git,*.log,*.jpg,*.git,*.png,**/vendor/**,data,public/system
 
 " --------------------
 " TagList
